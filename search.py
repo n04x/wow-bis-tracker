@@ -15,7 +15,6 @@ class Search:
         self.count = 0
         self.table = None
         self.reset = False
-        # self.search_button.config(command="resetAll")
     
         def searchItem():
             # self.results.clear()
