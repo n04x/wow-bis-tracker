@@ -1,4 +1,5 @@
 import tkinter as tk
+from PIL import ImageTk, Image
 
 class Table:
     def __init__(self, root, row, items, headers):
@@ -14,29 +15,33 @@ class Table:
         for i in range(row):                
             for j in range(len(items)):                
                 if j == 0:
-                    self.e = tk.Entry(root, width=8, font=('Arial', 12))
+                    path = './images/{}.jpg'.format(items[i].itemID)
+                    photo = ImageTk.PhotoImage(Image.open(path))
+                    self.e = tk.Label(root, image=photo)
+                    self.e.image = photo # keep a reference!
+                    # self.e = tk.Entry(root, width=8, font=('Arial', 12))
                     self.entries.append(self.e)
-                    self.e.grid(row=i+ROW_DISPLACEMENT, column=j)
-                    self.e.insert(tk.END, items[i].itemID)
+                    self.e.grid(row=i+ROW_DISPLACEMENT, column=j, padx=10)
+                    # self.e.insert(tk.END, items[i].itemID)
                 elif j == 1:
                     self.e = tk.Entry(root, width=10, font=('Arial', 12))
                     self.entries.append(self.e)
-                    self.e.grid(row=i+ROW_DISPLACEMENT, column=j)
+                    self.e.grid(row=i+ROW_DISPLACEMENT, column=j, padx=10)
                     self.e.insert(tk.END, items[i].slot)
                 elif j == 2:
                     self.e = tk.Entry(root, width=20, font=('Arial', 12))
                     self.entries.append(self.e)
-                    self.e.grid(row=i+ROW_DISPLACEMENT, column=j)
+                    self.e.grid(row=i+ROW_DISPLACEMENT, column=j, padx=10)
                     self.e.insert(tk.END, items[i].name)
                 elif j == 3:
                     self.e = tk.Entry(root, width=25, font=('Arial', 12))
                     self.entries.append(self.e)
-                    self.e.grid(row=i+ROW_DISPLACEMENT, column=j)
+                    self.e.grid(row=i+ROW_DISPLACEMENT, column=j, padx=10)
                     self.e.insert(tk.END, items[i].source)
                 elif j == 4:
                     self.e = tk.Entry(root, width=20, font=('Arial', 12))
                     self.entries.append(self.e)
-                    self.e.grid(row=i+ROW_DISPLACEMENT, column=j)
+                    self.e.grid(row=i+ROW_DISPLACEMENT, column=j, padx=10)
                     self.e.insert(tk.END, items[i].location)  
                 elif j == 5:
                     # self.e = tk.Entry(root, width=6, font=('Arial', 12))
@@ -47,11 +52,11 @@ class Table:
                     else:
                         self.e.deselect()
                     self.entries.append(self.e)
-                    self.e.grid(row=i+ROW_DISPLACEMENT, column=j)
+                    self.e.grid(row=i+ROW_DISPLACEMENT, column=j, padx=10)
                 elif j == 6:
                     self.e = tk.Entry(root, width=4, font=('Arial', 12))
                     self.entries.append(self.e)
-                    self.e.grid(row=i+ROW_DISPLACEMENT, column=j)
+                    self.e.grid(row=i+ROW_DISPLACEMENT, column=j, padx=10)
                     self.e.insert(tk.END, items[i].bis)    
 
     def __del__(self):
