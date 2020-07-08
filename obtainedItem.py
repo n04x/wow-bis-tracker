@@ -4,7 +4,7 @@ import csv
 class ObtainedItem:
     def __init__(self, root, row, items, headers):
         self.ROW_DISPLACEMENT = 1
-        self.obtain_label = tk.Label(root, text='Obtained item:', bg='black', fg='white', font=('Helvetica 18 bold')).grid(row=self.ROW_DISPLACEMENT, columnspan=3, sticky=tk.W)
+        self.obtain_label = tk.Label(root, text='Obtained item:', font=('Helvetica 18 bold')).grid(row=self.ROW_DISPLACEMENT, columnspan=3, sticky=tk.W)
         self.obtain_entry = tk.Entry(root)
         self.obtain_entry.grid(row=self.ROW_DISPLACEMENT, column=3)
         self.obtain_button = tk.Button(root, text='Submit')

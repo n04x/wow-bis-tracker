@@ -4,13 +4,13 @@ from PIL import ImageTk, Image
 class Table:
     def __init__(self, root, row, items, headers):
         self.row = row
-        root.configure(bg='black')
+        root.configure()
         self.entries = []
         
         # Creating table
         ROW_DISPLACEMENT = 4
         for i in range(len(headers)):
-            self.e = tk.Label(root, text=str(headers[i]), fg='white', bg='black', font=('Helvetica', 14)).grid(column=i,row=ROW_DISPLACEMENT-1)
+            self.e = tk.Label(root, text=str(headers[i]), font=('Helvetica', 14)).grid(column=i,row=ROW_DISPLACEMENT-1)
 
         for i in range(row):                
             for j in range(len(items)):                
