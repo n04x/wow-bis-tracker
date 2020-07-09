@@ -5,7 +5,6 @@ from headerbutton import *
 class Search:
     def __init__(self, root, row, items, headers):
         # Create Search(s)
-        
         # Search by Slot
         self.slot_label = tk.Label(root, text='Item Slot to search', font=('Helvetica 12 bold')).grid(row=2, columnspan=3, sticky=tk.W)
         
@@ -28,9 +27,8 @@ class Search:
         self.results = []
         self.count = 0
         self.table = None
-        self.reset = False
-
-
+        # self.reset = False
+        
         # Search(s) functions
         def findLocation():
             # self.results.clear()

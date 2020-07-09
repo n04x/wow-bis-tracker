@@ -16,7 +16,7 @@ class Table:
             for j in range(len(items)):                
                 if j == 0:
                     path = './images/{}.jpg'.format(items[i].itemID)
-                    photo = ImageTk.PhotoImage(Image.open(path))
+                    photo = ImageTk.PhotoImage(Image.open(path).resize((16,16), Image.ANTIALIAS))
                     self.e = tk.Label(root, image=photo)
                     self.e.image = photo # keep a reference!
                     # self.e = tk.Entry(root, width=8, font=('Arial', 12))
